@@ -1,18 +1,14 @@
 const personForm = document.querySelector("form");
 const heading = document.querySelector("h1")
-const para = document.querySelector("#personalP")
+const detailsDiv = document.querySelector("#details")
 
 personForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
   const nameValue = e.target.personName.value
-  heading.innerText = nameValue
-  const favColor = e.target.favColor.value
-  heading.style.color = favColor
-  para.innerText = `Hello, ${nameValue}, seems like your favorite color is ${favColor}!`
-  para.style.border=`3px solid ${favColor}`
-//   personName.value = ""
+  detailsDiv.innerText = nameValue
+  personName.value = ""
 }
 
 
