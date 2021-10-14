@@ -7,8 +7,10 @@ personForm.addEventListener("submit", handleSubmit);
 function handleSubmit(e) {
   e.preventDefault();
   const nameValue = e.target.personName.value
-  detailsDiv.innerText = nameValue
-  personName.value = ""
+  const name = document.createElement("em")
+  name.innerText = nameValue
+  detailsDiv.appendChild(name)
+    personName.value = ""
 }
 
 
