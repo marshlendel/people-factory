@@ -13,13 +13,18 @@ function renderColor(color) {
 }
 
 function renderListItem(fieldName, value) {
+  const dt = document.createElement("dt")
+  const dd = document.createElement("dd")
   const li = document.createElement("li")
-  li.innerHTML = `${fieldName}: ${value}`
+  dt.innerText = fieldName
+  dd.innerHTML = value
+  li.appendChild(dt)
+  li.appendChild(dd)
   return li
 }
 
 function renderList(personData) {
-  const list = document.createElement("ul")
+  const list = document.createElement("dl")
   for (prop in personData) {
     list.appendChild(renderListItem(prop, personData[prop]))
   }
@@ -28,9 +33,9 @@ function renderList(personData) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  const name = e.target.personName.value
-  const favColor = e.target.favColor.value
-  const age = e.target.age.value
+  const name = this.personName.value
+  const favColor = this.favColor.value
+  const age = this.age.value
 
   const person = {
     name: name,
