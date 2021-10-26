@@ -41,7 +41,7 @@ const PeopleFactory = {
   init(formName) {
     const form = document.querySelector(formName);
     form.addEventListener("submit", this.handleSubmit.bind(this));
-  },
+  }, 
 };
 
 //Pass in the selector for your form
